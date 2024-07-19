@@ -1,15 +1,23 @@
 public class Main {
     public static void main(String[] args) {
 
-        Conta cc = new ContaCorrente();
+        Cliente Iggon = new Cliente();
+        Iggon.setNome("Iggo Nicollas");
+
+        Conta cc = new ContaCorrente(Iggon);
+        Conta cp = new ContaPoupanca(Iggon);
+
         cc.depositar(100);
 
-        Conta cp = new ContaPoupanca();
 
         cc.imprimirExtrato();
         cp.imprimirExtrato();
 
-        cc.transferir(50, cp);
+        System.out.println("\nAguardando nova operação...\n");
+
+        cc.transferir(47, cp);
+
+        System.out.println("Transferencia executada com sucesso! \n");
 
         cc.imprimirExtrato();
         cp.imprimirExtrato();
